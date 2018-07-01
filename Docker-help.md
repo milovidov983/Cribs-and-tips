@@ -49,3 +49,7 @@ My crib on the commands of the docker
 Посмотреть какие опреации были проделаны при создании образа
 
 ```docker history <имя образа> ```
+
+Изменить точку входа(например на питон3) при создании образа
+
+```docker commit --change='ENTRYPOINT ["python3"]' create-image-from-me```
