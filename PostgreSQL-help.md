@@ -1,9 +1,11 @@
 # Шпаргалка по утилите *psql*
 
 Синтаксис:
+
 ```psql -U postgres -c 'SELECT now()'```
 
 ```-U postgres``` - имя пользователя
+
 ```-c 'SELECT now()'``` - команда
 
 
