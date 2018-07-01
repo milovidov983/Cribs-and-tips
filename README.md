@@ -26,7 +26,7 @@ My crib on the commands of the docker
 
 Для подключения к уже запущенному контейнеру
 
-docker exec -it <container-name> bash
+```docker exec -it <container-name> bash```
 
 Для того чтобы пробросить порты контейнера при запуске необходимо использовать ключ -p:
 
