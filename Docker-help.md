@@ -71,4 +71,7 @@ My crib on the commands of the docker
 
 ```docker commit --change='ENTRYPOINT ["python3"]' create-image-from-me```
 
+## Удаление
 
+Удалить все неиспользующиеся контейнеры
+```docker system prune```
