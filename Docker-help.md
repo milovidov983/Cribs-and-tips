@@ -74,4 +74,5 @@ My crib on the commands of the docker
 ## Удаление
 
 Удалить все неиспользующиеся контейнеры
+
 ```docker system prune```
