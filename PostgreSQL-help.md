@@ -17,3 +17,15 @@
 Список команд psql
 
 ```psql -U postgres -c '\?'```
+
+# Работа с Jsonb
+
+https://habr.com/post/254425/
+
+https://www.postgresql.org/docs/9.6/static/functions-json.html
+
+**Live example**
+```
+select *,  COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) as EmployeeAccreditation
+from "Table"
+limit 100;```
