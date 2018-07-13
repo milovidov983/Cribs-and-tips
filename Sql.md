@@ -15,3 +15,4 @@ from marketing.public."CreditPrograms"
 order by COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) desc, LoanPrecent
 limit 100;
 ```
+https://postgrespro.ru/docs/postgrespro/9.5/functions-conditional
