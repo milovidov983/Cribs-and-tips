@@ -8,8 +8,10 @@
 
 **Live example:**
 
-```select *,  COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) as EmployeeAccreditation, "Data"->> 'LoanPercent' as LoanPrecent
+```
+select *,  COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) as EmployeeAccreditation, "Data"->> 'LoanPercent' as LoanPrecent
 from marketing.public."CreditPrograms"
   where "ArchiveAt" is null
 order by COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) desc, LoanPrecent
-limit 100;```
+limit 100;
+```
