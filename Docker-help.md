@@ -79,4 +79,10 @@ My crib on the commands of the docker
 
 Удаление контейнера
 
+```docker rm -f 32936ce9d754```
+
+Удаление образа
+
 ```docker rmi -f 32936ce9d754```
+
+
