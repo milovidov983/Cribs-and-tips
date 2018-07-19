@@ -76,3 +76,7 @@ My crib on the commands of the docker
 Удалить все неиспользующиеся контейнеры
 
 ```docker system prune```
+
+Удаление контейнера
+
+```docker rmi -f 32936ce9d754```
