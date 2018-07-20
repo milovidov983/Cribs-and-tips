@@ -29,3 +29,7 @@ https://www.postgresql.org/docs/9.6/static/functions-json.html
 select *,  COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) as EmployeeAccreditation
 from "Table"
 limit 100;```
+
+## запрос с условиями
+
+``` "Data" @> '{"type":"juridical"}'```
