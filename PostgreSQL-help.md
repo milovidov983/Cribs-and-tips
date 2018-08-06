@@ -35,3 +35,9 @@ limit 100;
 ``` "Data" @> '{"type":"juridical"}'```
 
 ```Select * from "BuyProjects" where "Data"->>'requestId'='24039'```
+
+```
+select *
+from "RequestVersions"
+where cast("Data"->>'createdAt' as timestamp) between '2018-08-04T10:43' and '2018-08-04T10:45'
+```
