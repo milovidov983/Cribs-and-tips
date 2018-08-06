@@ -33,3 +33,5 @@ limit 100;
 ## Запрос с условиями
 
 ``` "Data" @> '{"type":"juridical"}'```
+
+```Select * from "BuyProjects" where "Data"->>'requestId'='24039'```
