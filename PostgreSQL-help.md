@@ -45,6 +45,12 @@ select *
 from "RequestVersions"
 where cast("Data"->>'createdAt' as timestamp) between '2018-08-04T10:43' and '2018-08-04T10:45'
 ```
+
+Проверка на существование свойства
+
+```
+not "Data"->'offers'->0->'extraServices'->'autoLoan'->'creditPrograms' is null
+```
 ## Операции обновления столбцов типа JSONB 
 
 Обновить имя:
@@ -84,3 +90,5 @@ UPDATE test SET data = jsonb_set(
     jsonb_set(data #- '{tags,-1}', '{tags,999999999}', '"tag3"', true), 
     '{name}', '"my-other-name"');
 ```
+
+
