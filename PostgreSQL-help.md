@@ -51,6 +51,14 @@ where cast("Data"->>'createdAt' as timestamp) between '2018-08-04T10:43' and '20
 ```
 not "Data"->'offers'->0->'extraServices'->'autoLoan'->'creditPrograms' is null
 ```
+
+Наайти свойство с параметром status = 0
+
+```
+Select * from "ScheduleOrders"
+where exists(select 1 from jsonb_array_elements("Data"->'history') v where v->>'status'='0')
+```
+
 ## Операции обновления столбцов типа JSONB 
 
 Обновить имя:
