@@ -110,7 +110,7 @@ select * from pg_stat_activity;
 select count(*) from pg_stat_activity;
 ```
 
-Сбросить определенный подключения:
+Сбросить определенные подключения:
 
 ```
 SELECT pg_terminate_backend(pg_stat_activity.pid)
