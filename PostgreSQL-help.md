@@ -100,3 +100,21 @@ UPDATE test SET data = jsonb_set(
 ```
 
 
+# Администрирование базы
+
+Посмотреть активные подключеня
+
+```
+select * from pg_stat_activity;
+
+select count(*) from pg_stat_activity;
+```
+
+Сбросить определенный подключения:
+
+```
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.usename = 'username'
+  AND pid <> pg_backend_pid();
+ ```
