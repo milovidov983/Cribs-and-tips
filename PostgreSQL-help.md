@@ -59,6 +59,24 @@ Select * from "ScheduleOrders"
 where exists(select 1 from jsonb_array_elements("Data"->'history') v where v->>'status'='0')
 ```
 
+Searching in Arrays
+```
+SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
+                            pay_by_quarter[2] = 10000 OR
+                            pay_by_quarter[3] = 10000 OR
+                            pay_by_quarter[4] = 10000;
+                            
+```
+```SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);```
+
+
+```
+Select * 
+from "BuyProjects" 
+where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201)
+```
+                            
+
 ## Операции обновления столбцов типа JSONB 
 
 Обновить имя:
