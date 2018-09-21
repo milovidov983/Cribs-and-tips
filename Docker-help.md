@@ -85,4 +85,13 @@ My crib on the commands of the docker
 
 ```docker rmi -f 32936ce9d754```
 
+## Обзор
 
+Посмтореть контейнер по хешу
+
+```
+docker ps -a --no-trunc -q | grep df6a2118dfbbdf4a931ba6b7acce485a9c77c5c373c876350b6a5512ee7a611d
+```
+```
+docker ps -a --no-trunc | grep df6a2118dfbbdf4a931ba6b7acce485a9c77c5c373c876350b6a5512ee7a611d
+```
