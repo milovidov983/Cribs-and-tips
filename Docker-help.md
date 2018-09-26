@@ -85,6 +85,10 @@ My crib on the commands of the docker
 
 ```docker rmi -f 32936ce9d754```
 
+Удалить все
+
+```docker rm $(docker ps -a -q)```
+
 ## Обзор
 
 Посмтореть контейнер по хешу
