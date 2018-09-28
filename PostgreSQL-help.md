@@ -32,7 +32,7 @@ limit 100;
 ```
 ## Запрос с условиями
 
-[8.14.3. Проверки на вхождение и существование jsonb](https://postgrespro.ru/docs/postgrespro/9.6/datatype-json"8.14. Типы JSON postgrespro 9.6")
+[8.14.3. Проверки на вхождение и существование jsonb](https://postgrespro.ru/docs/postgrespro/9.6/datatype-json "8.14. Типы JSON postgrespro 9.6")
 
 ```
 "Data" @> '{"type":"juridical"}'
