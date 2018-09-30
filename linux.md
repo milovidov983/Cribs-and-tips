@@ -2,11 +2,11 @@
 
 ### Выкл/Рестарт
 
-shutdown now
+*shutdown now* 
 Bring down the system immediately.
 
-shutdown -r now
+*shutdown -r now* 
 Bring down the system immediately, and automatically reboot it.
 
-shutdown -P now
+*shutdown -P now* 
 Bring down the system immediately, and automatically power off the system.
