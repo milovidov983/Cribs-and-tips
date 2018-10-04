@@ -81,8 +81,7 @@ where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v wh
 Запрос с интервалом времени
 
 ```
-"Data"->>'generationId'='1582' AND cast("Data"->>'dateAt' as timestamp) > current_timestamp - interval '60 days' AND "Data"->>'region'='23' AND "Data"->>'manufactureYear'='2011'
-
+"Data"->>'generationId'='1582' AND cast("Data"->>'dateAt' as timestamp) > current_timestamp - interval '60 days'
 ```
 
 ## Операции обновления столбцов типа JSONB 
