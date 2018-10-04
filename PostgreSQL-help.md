@@ -77,7 +77,13 @@ Select *
 from "BuyProjects" 
 where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201)
 ```
-                            
+
+Запрос с интервалом времени
+
+```
+"Data"->>'generationId'='1582' AND cast("Data"->>'dateAt' as timestamp) > current_timestamp - interval '60 days' AND "Data"->>'region'='23' AND "Data"->>'manufactureYear'='2011'
+
+```
 
 ## Операции обновления столбцов типа JSONB 
 
