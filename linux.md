@@ -1,4 +1,4 @@
-# Linux bash help
+# Linux help
 
 ### Выкл/Рестарт
 
@@ -10,3 +10,15 @@ Bring down the system immediately, and automatically reboot it.
 
 **shutdown -P now** 
 Bring down the system immediately, and automatically power off the system.
+
+
+
+### Virtual address
+
+For Debian or Ubuntu Linux you need to edit `/etc/network/interfaces` file with your favorite text editor and add the following lines:
+```
+iface eth0:0 inet static
+address 123.123.22.22
+netmask 255.0.0.0
+broadcast 123.255.255.255
+```
