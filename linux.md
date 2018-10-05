@@ -22,3 +22,21 @@ address 123.123.22.22
 netmask 255.0.0.0
 broadcast 123.255.255.255
 ```
+
+
+### Enable root login over SSH
+
+```
+nano /etc/ssh/sshd_config
+```
+```
+# Authentication:
+#LoginGraceTime 2m
+PermitRootLogin yes
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+```
+```
+service sshd restart
+```
