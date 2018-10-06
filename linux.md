@@ -40,3 +40,8 @@ PermitRootLogin yes
 ```
 service sshd restart
 ```
+
+copy file
+```
+cat ~/.ssh/id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
+```
