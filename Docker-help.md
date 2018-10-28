@@ -66,6 +66,20 @@ My crib on the commands of the docker
 
 ```docker history <имя образа> ```
 
+### ПРИМЕР СОЗДАНИЯ DOCKER ОБРАЗА И ЗАПУСКА ЕГО С ВХОДНОЙ ТОЧКОЙ В PYTHON3
+
+```
+docker run -it --name my_template_container ubuntu:14.04
+
+apt-get update
+apt-get install python3
+exit
+
+docker commit my_template_container my_python3_img 
+
+docker run -it --name my_container my_python3_img /usr/bin/python3
+```
+
 
 Изменить точку входа(например на питон3) при создании образа
 
