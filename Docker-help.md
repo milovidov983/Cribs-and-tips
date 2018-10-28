@@ -19,11 +19,13 @@ My crib on the commands of the docker
 ```--name <name>```
 
 
+
 ## Файлы
 
 Подключить директорию/файл к контейнеру из хоста
 
 ``` -v <путь к директории хоста>:<путь в контейнере>```
+
 
 
 ## Взаимодействие
@@ -46,6 +48,7 @@ My crib on the commands of the docker
 Задать кастомную сеть контейнеру
 
 ```--network=custom```
+
 
 
 ## Создание и работа с образами
@@ -85,6 +88,8 @@ docker run -it --name my_container my_python3_img /usr/bin/python3
 
 ```docker commit --change='ENTRYPOINT ["python3"]' create-image-from-me```
 
+
+
 ## Удаление
 
 Удалить все неиспользующиеся контейнеры
@@ -102,6 +107,8 @@ docker run -it --name my_container my_python3_img /usr/bin/python3
 Удалить все
 
 ```docker rm $(docker ps -a -q)```
+
+
 
 ## Обзор
 
