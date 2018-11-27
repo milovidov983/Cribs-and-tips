@@ -84,6 +84,17 @@ where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v wh
 "Data"->>'generationId'='1582' AND cast("Data"->>'dateAt' as timestamp) > current_timestamp - interval '60 days'
 ```
 
+Найти все строке у которых есть json массив и массив больше 1:
+
+```
+select *
+from (
+       SELECT *, jsonb_array_length("Data" -> 'sources') AS len
+       FROM "Requests"
+     ) as a
+where len > 1
+```
+
 ## Операции обновления столбцов типа JSONB 
 
 Обновить имя:
