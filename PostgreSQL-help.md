@@ -81,6 +81,13 @@ from "BuyProjects"
 where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201)
 ```
 
+Создание столбца из jsonb массива
+
+```
+select "Id", ARRAY(SELECT jsonb_array_elements_text("Data" -> ''scheduleIds''))::int[] 
+from "BuyProjects"
+```
+
 Запрос с интервалом времени
 
 ```
