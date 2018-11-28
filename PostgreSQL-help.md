@@ -23,6 +23,8 @@
 https://habr.com/post/254425/
 
 https://www.postgresql.org/docs/9.6/static/functions-json.html
+https://www.postgresql.org/docs/9.6/functions-array.html
+
 
 **Live example**
 ```
