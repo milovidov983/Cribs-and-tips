@@ -4,3 +4,12 @@
 ```
 new Date(Date.now()).toISOString();
 ```
+
+
+## Add some minutes to date 
+```
+var d1 = new Date (),
+    d2 = new Date ( d1 );
+d2.setMinutes ( d1.getMinutes() + 30 );
+alert ( d2 );
+```
