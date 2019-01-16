@@ -120,3 +120,11 @@ docker ps -a --no-trunc -q | grep df6a2118dfbbdf4a931ba6b7acce485a9c77c5c373c876
 ```
 docker ps -a --no-trunc | grep df6a2118dfbbdf4a931ba6b7acce485a9c77c5c373c876350b6a5512ee7a611d
 ```
+
+## Работа с файлами
+
+Скопировать файл из контейнера
+
+```
+docker cp container-name:/foo/. ./foo/
+```
