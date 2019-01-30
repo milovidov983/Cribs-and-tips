@@ -172,3 +172,10 @@ FROM pg_stat_activity
 WHERE pg_stat_activity.usename = 'username'
   AND pid <> pg_backend_pid();
  ```
+ 
+ Подробно о VACUUM
+ 
+ http://asurf.ru/db/talk-about-command-vacuum.html
+ 
+ VACUUM — это операция сборки мусора и опционально анализатор базы данных.
+ 
