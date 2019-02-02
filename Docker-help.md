@@ -100,15 +100,13 @@ docker run -it --name my_container my_python3_img /usr/bin/python3
 
 ```docker rm -f 32936ce9d754```
 
-Удаление образа
-
-```docker rmi -f 32936ce9d754```
-
-Удалить все
+Удалить все запущенные и остановленные контейнеры
 
 ```docker rm $(docker ps -a -q)```
 
+Удаление образа
 
+```docker rmi -f 32936ce9d754```
 
 ## Обзор
 
