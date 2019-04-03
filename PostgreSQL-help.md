@@ -179,3 +179,10 @@ WHERE pg_stat_activity.usename = 'username'
  
  VACUUM — это операция сборки мусора и опционально анализатор базы данных.
  
+ ## Дополнительно
+ 
+ Посмотреть устаночленные расширения:
+ ```
+ select * from pg_available_extensions order by name;
+ ```
+ 
