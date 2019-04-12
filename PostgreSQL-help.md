@@ -64,6 +64,12 @@ Select * from "ScheduleOrders"
 where exists(select 1 from jsonb_array_elements("Data"->'history') v where v->>'status'='0')
 ```
 
+Кладезь:
+
+https://www.postgresql.org/docs/9.5/functions-json.html
+
+
+
 Searching in Arrays
 ```
 SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
