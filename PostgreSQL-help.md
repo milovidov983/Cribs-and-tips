@@ -192,3 +192,11 @@ WHERE pg_stat_activity.usename = 'username'
  select * from pg_available_extensions order by name;
  ```
  
+ ## Current Date/Time
+ 
+ 
+ To insert the current time use current_timestamp as documented in the manual:
+ 
+ https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-CURRENT
+ 
+ 
