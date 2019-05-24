@@ -184,7 +184,13 @@ WHERE pg_stat_activity.usename = 'username'
  http://asurf.ru/db/talk-about-command-vacuum.html
  
  VACUUM — это операция сборки мусора и опционально анализатор базы данных.
+
+# Размер
  
+```
+select pg_size_pretty(pg_database_size('namedb'))
+```
+
  ## Дополнительно
  
  Посмотреть устаночленные расширения:
