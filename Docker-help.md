@@ -126,3 +126,34 @@ docker ps -a --no-trunc | grep df6a2118dfbbdf4a931ba6b7acce485a9c77c5c373c876350
 ```
 docker cp container-name:/foo/. ./foo/
 ```
+
+## using YAML Anchors and the X prefix to set defaults:
+
+```
+version: "3.4"
+
+x-app: &default-app
+  build:
+    context: "."
+    args:
+      - "APP_ENV=${APP_ENV:-prod}"
+  depends_on:
+    - "postgres"
+    - "redis"
+  env_file:
+    - ".env"
+  image: "nickjj/myapp"
+  restart: "unless-stopped"
+  stop_grace_period: "3s"
+  volumes:
+    - ".:/app"
+
+services:
+  web:
+    <<: *default-app 
+    ports:
+      - "8000:8000"
+
+  worker:
+    <<: *default-app
+```
