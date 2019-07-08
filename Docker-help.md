@@ -129,7 +129,7 @@ docker cp container-name:/foo/. ./foo/
 
 ## using YAML Anchors and the X prefix to set defaults:
 
-```
+```YAML
 version: "3.4"
 
 x-app: &default-app
