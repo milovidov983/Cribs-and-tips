@@ -51,3 +51,10 @@ cat ~/.ssh/id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorize
 ```
 find . -maxdepth 1 -type d -exec du -hs {} \;
 ```
+
+
+## Определяем версию Ubuntu из командной строки
+
+```
+$ lsb_release -a
+```
