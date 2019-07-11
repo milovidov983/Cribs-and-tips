@@ -55,6 +55,10 @@ where cast("Data"->>'createdAt' as timestamp) between '2018-08-04T10:43' and '20
 
 ```
 not "Data"->'offers'->0->'extraServices'->'autoLoan'->'creditPrograms' is null
+
+или
+"Data"->'offers'->0->'extraServices'->'autoLoan' ? 'creditPrograms'
+
 ```
 
 Наайти свойство с параметром status = 0
