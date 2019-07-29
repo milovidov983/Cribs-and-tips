@@ -2,7 +2,7 @@
 My crib on the commands of the docker
 
 
-## Основыне RUN
+## RUN
 
 Режим терминала
 
