@@ -69,6 +69,10 @@ My crib on the commands of the docker
 
 ```docker history <имя образа> ```
 
+**Все про CMD и ENTRYPOINT**
+https://habr.com/ru/company/southbridge/blog/329138/
+
+
 ### ПРИМЕР СОЗДАНИЯ DOCKER ОБРАЗА И ЗАПУСКА ЕГО С ВХОДНОЙ ТОЧКОЙ В PYTHON3
 
 ```
