@@ -41,11 +41,11 @@ limit 100;
 "Data" @> '{"type":"juridical"}'
 ```
 
-```
+```sql
 Select * from "BuyProjects" where "Data"->>'requestId'='24039'
 ```
 
-```
+```sql
 select *
 from "RequestVersions"
 where cast("Data"->>'createdAt' as timestamp) between '2018-08-04T10:43' and '2018-08-04T10:45'
@@ -63,7 +63,7 @@ not "Data"->'offers'->0->'extraServices'->'autoLoan'->'creditPrograms' is null
 
 Наайти свойство с параметром status = 0
 
-```
+```sql
 Select * from "ScheduleOrders"
 where exists(select 1 from jsonb_array_elements("Data"->'history') v where v->>'status'='0')
 ```
@@ -75,20 +75,23 @@ https://www.postgresql.org/docs/9.5/functions-json.html
 
 
 Searching in Arrays
-```
+```sql
 SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
                             pay_by_quarter[2] = 10000 OR
                             pay_by_quarter[3] = 10000 OR
                             pay_by_quarter[4] = 10000;
                             
 ```
-```SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);```
 
-
+```sql
+SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);
 ```
+
+
+```sql
 Select * 
 from "BuyProjects" 
-where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201)
+where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201);
 ```
 
 ```sql
@@ -97,68 +100,68 @@ FROM "Auctions"
 WHERE  exists(SELECT 1
               FROM jsonb_array_elements("StatusData"->'statusHistory') AS statusData
               WHERE statusData->>'status' = 'bidsProcessing'
-              AND cast(statusData->>'changedAt' AS  timestamp) between date '2019-08-02' AND date '2019-08-05')
+              AND cast(statusData->>'changedAt' AS  timestamp) between date '2019-08-02' AND date '2019-08-05');
 ```
 
 Создание столбца из jsonb массива
 
-```
+```sql
 select "Id", ARRAY(SELECT jsonb_array_elements_text("Data" -> ''scheduleIds''))::int[] 
-from "BuyProjects"
+from "BuyProjects";
 ```
 
 Запрос с интервалом времени
 
-```
-"Data"->>'generationId'='1582' AND cast("Data"->>'dateAt' as timestamp) > current_timestamp - interval '60 days'
+```sql
+"Data"->>'generationId'='1582' AND cast("Data"->>'dateAt' as timestamp) > current_timestamp - interval '60 days';
 ```
 
 Найти все строке у которых есть json массив и массив больше 1:
 
-```
+```sql
 select *
 from (
        SELECT *, jsonb_array_length("Data" -> 'sources') AS len
        FROM "Requests"
      ) as a
-where len > 1
+where len > 1;
 ```
 
 ## Операции обновления столбцов типа JSONB 
 
 Обновить имя:
 
-```
+```sql
 UPDATE test SET data = jsonb_set(data, '{name}', '"my-other-name"');
 ```
 
 Replace the tags (as oppose to adding or removing tags):
 
-```
+```sql
 UPDATE test SET data = jsonb_set(data, '{tags}', '["tag3", "tag4"]');
 ```
 
 Replacing the second tag (0-indexed):
 
-```
+```sql
 UPDATE test SET data = jsonb_set(data, '{tags,1}', '"tag5"');
 ```
 
 Append a tag (this will work as long as there are fewer than 999 tags; changing argument 999 to 1000 or above generates an error. This no longer appears to be the case in Postgres 9.5.3; a much larger index can be used):
 
-```
+```sql
 UPDATE test SET data = jsonb_set(data, '{tags,999999999}', '"tag6"', true);
 ```
 
 Remove the last tag:
 
-```
+```sql
 UPDATE test SET data = data #- '{tags,-1}'
 ```
 
 Complex update (delete the last tag, insert a new tag, and change the name):
 
-```
+```sql
 UPDATE test SET data = jsonb_set(
     jsonb_set(data #- '{tags,-1}', '{tags,999999999}', '"tag3"', true), 
     '{name}', '"my-other-name"');
@@ -169,13 +172,13 @@ UPDATE test SET data = jsonb_set(
 
 Посмотреть активные подключеня
 
-```
+```sql
 select * from pg_stat_activity;
 
 select count(*) from pg_stat_activity;
 ```
 
-```
+```sql
 select max_conn,used,res_for_super,max_conn-used-res_for_super res_for_normal 
 from 
   (select count(*) used from pg_stat_activity) t1,
@@ -185,7 +188,7 @@ from
 
 Сбросить определенные подключения:
 
-```
+```sql
 SELECT pg_terminate_backend(pg_stat_activity.pid)
 FROM pg_stat_activity
 WHERE pg_stat_activity.usename = 'username'
@@ -200,14 +203,14 @@ WHERE pg_stat_activity.usename = 'username'
 
 # Размер
  
-```
+```sql
 select pg_size_pretty(pg_database_size('namedb'))
 ```
 
  ## Дополнительно
  
  Посмотреть устаночленные расширения:
- ```
+ ```sql
  select * from pg_available_extensions order by name;
  ```
  
@@ -222,7 +225,7 @@ select pg_size_pretty(pg_database_size('namedb'))
  
  Посмотерть все енумы:
  
- ```
+ ```sql
  select n.nspname as enum_schema,
        t.typname as enum_name,
        e.enumlabel as enum_value
