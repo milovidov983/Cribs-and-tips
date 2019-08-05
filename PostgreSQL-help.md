@@ -28,7 +28,7 @@ https://www.postgresql.org/docs/9.6/functions-array.html
 
 
 **Live example**
-```
+```sql
 select *,  COALESCE( cast("Data" ->> 'EmployeeAccreditation' as boolean), false) as EmployeeAccreditation
 from "Table"
 limit 100;
@@ -91,7 +91,7 @@ from "BuyProjects"
 where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201)
 ```
 
-```
+```sql
 SELECT *
 FROM "Auctions"
 WHERE  exists(SELECT 1
