@@ -91,6 +91,15 @@ from "BuyProjects"
 where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201)
 ```
 
+```
+SELECT *
+FROM "Auctions"
+WHERE  exists(SELECT 1
+              FROM jsonb_array_elements("StatusData"->'statusHistory') AS statusData
+              WHERE statusData->>'status' = 'bidsProcessing'
+              AND cast(statusData->>'changedAt' AS  timestamp) between date '2019-08-02' AND date '2019-08-05')
+```
+
 Создание столбца из jsonb массива
 
 ```
