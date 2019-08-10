@@ -4,9 +4,9 @@
 ## VisualStudio
 ### Better Comments
 
-https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
+https://marketplace.visualstudio.com/items?itemName=OmarRwemi.BetterComments
 
-![Better Comments example](https://github.com/aaron-bond/better-comments/raw/master/images/better-comments.PNG "Better Comments")
+![Better Comments example](https://github.com/omsharp/BetterComments/raw/master/screenshots/ClassificationC.png "Better Comments")
 
 
 
