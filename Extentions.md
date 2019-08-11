@@ -1,5 +1,4 @@
-# Расширения которые я использую
-
+# Расширения
 
 ## VisualStudio
 ### Better Comments
