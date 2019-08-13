@@ -166,7 +166,15 @@ UPDATE test SET data = jsonb_set(
     jsonb_set(data #- '{tags,-1}', '{tags,999999999}', '"tag3"', true), 
     '{name}', '"my-other-name"');
 ```
+## Массивы
 
+Замена элеемнта в массиве
+```sql
+
+UPDATE users SET topics = array_replace(topics, 'dogs', 'mice');
+
+
+```
 
 # Администрирование базы
 
