@@ -129,6 +129,22 @@ where len > 1;
 
 ## Операции обновления столбцов типа JSONB 
 
+Добавить всем у кого нет телефона:
+```sql
+UPDATE "Customers" 
+SET "Data" = jsonb_set("Data", '{physicalInfo,phones}'::text[],
+	jsonb_build_array(
+		json_build_object(
+			'type', 'cell', 
+			'number', '70000000000', 
+			'primary', true, 
+			'lastUsed', true
+		)
+	)
+)
+WHERE not "Data"->'physicalInfo' ? 'phones'
+```
+
 Обновить имя:
 
 ```sql
