@@ -89,9 +89,7 @@ SELECT * FROM sal_emp WHERE 10000 = ANY (pay_by_quarter);
 
 
 ```sql
-Select * 
-from "BuyProjects" 
-where exists(select 1 from jsonb_array_elements_text("Data"->'scheduleIds') v where cast(v as int)=27201);
+"Id" = ANY(ARRAY['element1', 'element2'])
 ```
 
 ```sql
