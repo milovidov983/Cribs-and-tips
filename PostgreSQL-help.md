@@ -256,4 +256,7 @@ from pg_type t
    join pg_catalog.pg_namespace n ON n.oid = t.typnamespace;
  ```
  
+ ## Ссылки
+ 
+ Полезные трюки PostgreSQL https://habr.com/ru/post/280912/
  
