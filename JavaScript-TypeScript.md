@@ -14,14 +14,14 @@ d2.setMinutes ( d1.getMinutes() + 30 );
 alert ( d2 );
 ```
 
-## Iteration inside fuckjsmap
+## Iteration inside jsmap
 
 ```typescript
-const fuckmap : [key: string]: string;
+const map : [key: string]: string;
 
-Object.keys(fuckmap).map(key=> { 
+Object.keys(map).map(key=> { 
     console.log(key); 
-    console.log(fuckmap[key]);
+    console.log(map[key]);
     }
 );
 
