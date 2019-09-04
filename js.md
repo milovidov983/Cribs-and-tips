@@ -13,3 +13,16 @@ var d1 = new Date (),
 d2.setMinutes ( d1.getMinutes() + 30 );
 alert ( d2 );
 ```
+
+## Iteration inside fuckjsmap
+
+```typescript
+const fuckmap : [key: string]: string;
+
+Object.keys(fuckmap).map(key=> { 
+    console.log(key); 
+    console.log(fuckmap[key]);
+    }
+);
+
+```
