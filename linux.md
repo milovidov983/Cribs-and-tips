@@ -41,10 +41,21 @@ PermitRootLogin yes
 service sshd restart
 ```
 
-copy file
+### Copy file to server
+v1
 ```
-cat ~/.ssh/id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
+$ cat ~/.ssh/id_rsa.pub | ssh root@[your.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 ```
+v2
+```
+$ scp /opt/file.tar.gz root@11.22.33.44:/home/user
+```
+
+### Download file to localhost
+```bash
+$ scp root@11.22.33.44:/home/user/file.tar.gz "D:\install"
+```
+
 
 ### Узнать размер директорий верхено уровня 
 
