@@ -50,6 +50,19 @@ v2
 ```
 $ scp /opt/file.tar.gz root@11.22.33.44:/home/user
 ```
+To copy all from Local Location to Remote Location (Upload)
+
+scp -r /path/from/destination username@hostname:/path/to/destination
+To copy all from Remote Location to Local Location (Download)
+
+scp -r username@hostname:/path/from/destination /path/to/destination
+Custom Port where xxxx is custom port number
+
+ scp -r -P xxxx username@hostname:/path/from/destination /path/to/destination
+Copy on current directory from Remote to Local
+
+scp -r username@hostname:/path/from/file .
+
 
 ### Download file to localhost
 ```bash
