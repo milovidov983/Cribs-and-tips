@@ -190,6 +190,11 @@ UPDATE users SET topics = array_replace(topics, 'dogs', 'mice');
 
 ```
 
+## Кастинг даты
+```sql
+cast("Offers"."Data" ->> 'FinishAt' as timestamp) at time zone 'utc' at time zone 'Europe/Moscow'
+```
+
 # Администрирование базы
 
 Посмотреть активные подключеня
