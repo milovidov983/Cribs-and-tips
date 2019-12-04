@@ -1,6 +1,10 @@
 # docker-help
 My crib on the commands of the docker
 
+## Statistics
+
+```docker stats $(docker ps --format={{.Names}})```
+
 
 ## RUN
 
