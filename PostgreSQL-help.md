@@ -265,3 +265,18 @@ from pg_type t
  
  Полезные трюки PostgreSQL https://habr.com/ru/post/280912/
  
+ ## Логические операторы
+ 
+ ```sql
+ select null = null,
+       null <> null,
+       null is not distinct from null;
+ ```
+
+| col1  | col2  | col3 |
+| ----- | ----- | ---- |
+| false | false | true |
+
+
+ 
+ 
