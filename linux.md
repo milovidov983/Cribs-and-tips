@@ -82,3 +82,9 @@ find . -maxdepth 1 -type d -exec du -hs {} \;
 ```
 $ lsb_release -a
 ```
+
+## Генерация пароля
+
+```
+openssl rand -base64 32
+```
