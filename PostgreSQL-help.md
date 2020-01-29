@@ -213,7 +213,7 @@ from
   (select setting::int max_conn from pg_settings where name=$$max_connections$$) t3
 ```
 
-Сбросить определенные подключения:
+## Сбросить определенные подключения:
 
 ```sql
 SELECT pg_terminate_backend(pg_stat_activity.pid)
@@ -221,6 +221,15 @@ FROM pg_stat_activity
 WHERE pg_stat_activity.usename = 'username'
   AND pid <> pg_backend_pid();
  ```
+
+## Закрыть все подключения к конкретной базе:
+
+```
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.datname = 'assortmentpolicy' -- ← change this to your DB
+  AND pid <> pg_backend_pid();
+```
  
  Подробно о VACUUM
  
