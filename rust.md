@@ -2,6 +2,7 @@
 
 https://rurust.github.io/rust_book_ru/getting-started.html
 
+https://crates.io/
 
 ## Простой способ создать новый Cargo проект
 
