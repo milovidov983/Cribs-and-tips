@@ -21,3 +21,6 @@ name = "hello_world"
 version = "0.0.1"
 authors = [ "Your name <you@example.com>" ]
 ```
+## Зависимости
+
+А что, если мы захотим использовать версию v0.3.9? У Cargo есть другая команда, update
