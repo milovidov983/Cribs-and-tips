@@ -3,6 +3,10 @@
 https://rurust.github.io/rust_book_ru/getting-started.html
 
 
+## Простой способ создать новый Cargo проект
+
+`cargo new hello_world --bin`
+
 ## Сборка
 
 `cargo build --release`
