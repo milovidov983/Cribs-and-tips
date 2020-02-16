@@ -75,3 +75,66 @@ let six = f(5);
 - f32
 - f64
 
+## Метки циклов
+
+```rust
+
+#![allow(unused_variables)]
+fn main() {
+'outer: for x in 0..10 {
+    'inner: for y in 0..10 {
+        if x % 2 == 0 { continue 'outer; } // продолжает цикл по x
+        if y % 2 == 0 { continue 'inner; } // продолжает цикл по y
+        println!("x: {}, y: {}", x, y);
+    }
+}
+}
+
+```
+
+
+## Утверждение where
+
+
+```rust
+
+#![allow(unused_variables)]
+fn main() {
+use std::fmt::Debug;
+
+fn bar<T, K>(x: T, y: K)
+        where T: Clone,
+              K: Clone + Debug {
+
+        x.clone();
+        y.clone();
+        println!("{:?}", y);
+    }
+}
+
+
+```
+
+
+```rust
+trait ConvertTo<Output> {
+    fn convert(&self) -> Output;
+}
+
+impl ConvertTo<i64> for i32 {
+    fn convert(&self) -> i64 { *self as i64 }
+}
+
+// может быть вызван с T == i32
+fn normal<T: ConvertTo<i64>>(x: &T) -> i64 {
+    x.convert()
+}
+
+// может быть вызван с T == i64
+fn inverse<T>() -> T
+        // использует ConvertTo как если бы это было «ConvertTo<i64>»
+        where i32: ConvertTo<T> {
+    1i32.convert()
+}
+
+```
