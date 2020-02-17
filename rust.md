@@ -1,5 +1,7 @@
 # Rust шпаргалка
 
+https://rurust.github.io/rust_book_ru/syntax-and-semantics.html
+
 https://rurust.github.io/rust_book_ru/getting-started.html
 
 https://crates.io/
