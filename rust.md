@@ -8,6 +8,12 @@ https://rurust.github.io/rust_book_ru/getting-started.html
 
 https://crates.io/
 
+
+Обедающие философы:
+
+https://rurust.github.io/rust_book_ru/dining-philosophers.html
+
+
 ## Простой способ создать новый Cargo проект
 
 `cargo new hello_world --bin`
