@@ -88,3 +88,7 @@ $ lsb_release -a
 ```
 openssl rand -base64 32
 ```
+
+## PID род процесса
+
+pstree -p dharris
