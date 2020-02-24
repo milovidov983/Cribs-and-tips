@@ -91,4 +91,4 @@ openssl rand -base64 32
 
 ## PID род процесса
 
-pstree -p dharris
+pstree -p
