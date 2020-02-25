@@ -296,5 +296,11 @@ select "UserId" from
           (SELECT generate_series(1,1000) AS id,md5(random()::text) AS "UserId")s;
 	  
 ```
+
+## Разность массивов
+
+```sql
+select array(select unnest(:arr1) except select unnest(:arr2));
+```
  
  
