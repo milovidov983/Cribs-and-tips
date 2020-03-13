@@ -303,4 +303,25 @@ select "UserId" from
 select array(select unnest(:arr1) except select unnest(:arr2));
 ```
  
- 
+## Создаем тригер для версионирования таблицы
+
+```sql
+create function save_OutboundCampaigns_version() returns trigger
+    language plpgsql
+as
+$$
+BEGIN
+        INSERT INTO "OutboundCampaignsVersions" ("CampaignId", "Data", "CreatedAt", "ChangedAt", "ResponsibleId")
+        VALUES (NEW."Id", NEW."Data", NEW."CreatedAt", NEW."ChangedAt", NEW."ResponsibleId");
+
+        RETURN NULL;
+    END;
+$$;
+
+create trigger "saveOutboundCampaignsVersions"
+    after insert or update
+    on "OutboundCampaigns"
+    for each row
+execute procedure save_OutboundCampaigns_version();
+
+```
