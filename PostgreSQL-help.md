@@ -305,6 +305,8 @@ select array(select unnest(:arr1) except select unnest(:arr2));
  
 ## Создаем тригер для версионирования таблицы
 
+Вариант 1
+
 ```sql
 create function save_OutboundCampaigns_version() returns trigger
     language plpgsql
@@ -324,6 +326,60 @@ create trigger "saveOutboundCampaignsVersions"
     for each row
 execute procedure save_OutboundCampaigns_version();
 
+```
+
+Вариант 2
+
+```sql
+create table "UserProfileVersions"
+(
+	"Id"			  serial not null primary key,
+	"ChangedAt"		  timestamp not null default now(),
+	"UserId"          text,
+	"FirstName"       text
+);
+
+----------------------------------------------------------------------
+create function save_user_profile_version() returns trigger
+    language plpgsql
+as
+$$
+BEGIN
+		IF OLD."UserId" is not null THEN
+			INSERT INTO "UserProfileVersions" (
+				"UserId"         ,
+				"FirstName"      
+			)
+			VALUES (
+				OLD."UserId"         ,
+				OLD."FirstName"      
+			);
+		END IF;
+        RETURN NULL;
+    END;
+$$;
+
+alter function save_user_profile_version() owner to postgres;
+
+
+------------------------------------------------------------------------
+create trigger "saveUserProfile"
+    after insert or update
+    on "UserProfile"
+    for each row
+execute procedure save_user_profile_version();
+
+
+------------------------------------------------------------------------
+
+
+grant select on all tables in schema public to group "auction-readers";
+
+grant select, update, insert, delete on all tables in schema public to group "auction-writers";
+grant usage on schema public to group "auction-writers";
+grant usage on all sequences in schema public to group "auction-writers";
+
+grant "auction-writers" to "auction";
 ```
 
 # Роли
