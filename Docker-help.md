@@ -5,6 +5,16 @@ My crib on the commands of the docker
 
 ```docker stats $(docker ps --format={{.Names}})```
 
+## How to log all the processes running inside a Docker container?
+
+```
+docker top <container>
+```
+
+```
+docker top <container_id> -eo pid,cmd
+```
+
 
 ## RUN
 
