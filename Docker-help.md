@@ -15,6 +15,20 @@ docker top <container>
 docker top <container_id> -eo pid,cmd
 ```
 
+## What to do when all docker commands hang?
+
+Please follow the below steps to solve this issue
+
+Step 1 : Uninstall docker “sudo yum remove docker"
+Step 2 : remove all docker folder
+"sudo rm -rf /var/lib/docker”
+“sudo rm -rf /var/run/docker”
+“sudo rm /var/run/docker.*” (remove docker.sock, docker.pid files)
+
+Step 3 : Reinstall docker "sudo yum install docker"
+Step 4 : Start docker “sudo service docker start”
+
+
 
 ## RUN
 
