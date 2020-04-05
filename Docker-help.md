@@ -1,6 +1,33 @@
 # docker-help
 My crib on the commands of the docker
 
+## Installation
+
+```
+sudo apt-get update
+```
+
+
+```
+sudo apt-get remove docker docker-engine docker.io
+```
+
+```
+sudo apt-get update
+```
+
+```
+sudo apt install docker.io
+```
+
+```
+sudo systemctl start docker
+```
+
+```
+sudo systemctl enable docker
+```
+
 ## Statistics
 
 ```docker stats $(docker ps --format={{.Names}})```
