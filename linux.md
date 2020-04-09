@@ -92,3 +92,12 @@ openssl rand -base64 32
 ## PID род процесса
 
 pstree -p
+
+## How to create an alias in Ubuntu 16 via the commandline
+
+sudo nano -Bu ~/.bashrc
+
+#Custom Aliases
+
+alias nano='nano -Bu'  # backup original file and undo changes
+alias rm='rm -i' # request confirmation before deleting a file
