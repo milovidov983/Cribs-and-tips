@@ -230,6 +230,13 @@ FROM pg_stat_activity
 WHERE pg_stat_activity.datname = 'assortmentpolicy' -- ← change this to your DB
   AND pid <> pg_backend_pid();
 ```
+
+## Вывести индексы
+
+```
+SELECT * FROM pg_indexes WHERE tablename = 'your_table'; 
+```
+
  
  Подробно о VACUUM
  
