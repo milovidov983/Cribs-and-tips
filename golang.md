@@ -11,6 +11,21 @@ x["key"] = 10
 fmt.Println(x["key"])
 ```
 
+```go
+elements := map[string]string{
+    "H": "Hydrogen",
+    "He": "Helium",
+    "Li": "Lithium",
+    "Be": "Beryllium",
+    "B": "Boron",
+    "C": "Carbon",
+    "N": "Nitrogen",
+    "O": "Oxygen",
+    "F": "Fluorine",
+    "Ne": "Neon",
+}
+```
+
 ### Access
 
 ```go
