@@ -3,6 +3,16 @@
 
 ## Maps
 
+### Create
+
+```go
+x := make(map[string]int)
+x["key"] = 10
+fmt.Println(x["key"])
+```
+
+### Access
+
 ```go
 name, ok := elements["Un"]
 fmt.Println(name, ok)
