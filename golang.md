@@ -42,3 +42,28 @@ if name, ok := elements["Un"]; ok {
 ```
 
 Сперва мы пробуем получить значение из карты, а затем, если это удалось, мы выполняем код внутри блока.
+
+
+## Function
+ 
+**defer** - отложенный вызов
+```go 
+
+func first() {
+    fmt.Println("1st")
+}
+func second() {
+    fmt.Println("2nd")
+}
+func main() {
+    defer second()
+    first()
+}
+//Эта программа выводит 1st, затем 2nd. Грубо говоря defer перемещает вызов second в конец функции:
+
+func main() {
+    first()
+    second()
+}
+```
+
