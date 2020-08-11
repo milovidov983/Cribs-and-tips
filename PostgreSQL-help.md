@@ -389,6 +389,20 @@ grant usage on all sequences in schema public to group "auction-writers";
 grant "auction-writers" to "auction";
 ```
 
+## Вывести все триггер
+
+```sql
+select * from pg_trigger
+```
+
+## Получить код триггера
+
+```sql
+select pg_get_triggerdef(oid)
+from pg_trigger
+where tgname = 'saveArchives';
+```
+
 # Роли
 
 Выбрать все роли
