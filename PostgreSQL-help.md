@@ -74,7 +74,7 @@ https://www.postgresql.org/docs/9.5/functions-json.html
 
 
 
-Searching in Arrays
+### Searching in Arrays
 ```sql
 SELECT * FROM sal_emp WHERE pay_by_quarter[1] = 10000 OR
                             pay_by_quarter[2] = 10000 OR
@@ -106,6 +106,16 @@ WHERE  exists(SELECT 1
 ```sql
 select "Id", ARRAY(SELECT jsonb_array_elements_text("Data" -> ''scheduleIds''))::int[] 
 from "BuyProjects";
+```
+
+
+
+```sql
+  select distinct "Id"
+    from "CreditProjects"
+             cross join lateral jsonb_array_elements("Data" -> 'bankRequests') brs(br) 
+-- brs произвольное имя временной таблицы
+-- произвольное br имя стобца 
 ```
 
 Запрос с интервалом времени
