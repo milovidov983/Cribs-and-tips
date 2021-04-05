@@ -435,3 +435,12 @@ SELECT
 FROM pg_catalog.pg_roles r
 ORDER BY 1;
 ```
+
+# Psql
+
+Восстановлнние из дампа
+```sql
+
+psql.exe -d "sellProject" -U postgres -h 192.168.0.1 -p 5432 < c:\\temp-backup\\poroject.dump
+
+```
