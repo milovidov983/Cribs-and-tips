@@ -314,6 +314,22 @@ select "UserId" from
 	  
 ```
 
+## Поиск пропусков в последоватиельности идентификаторов
+
+```sql
+SELECT  "Id" + 1
+FROM    "BuyProjects" mo
+WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    "BuyProjects" mi
+        WHERE   mi."Id" = mo."Id" + 1
+        )
+ORDER BY
+        "Id"
+LIMIT 1
+```
+
 ## Разность массивов
 
 ```sql
