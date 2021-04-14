@@ -38,3 +38,9 @@ openssl pkcs7 -print_certs -in site.p7b -out certificate.ceropenssl pkcs12 -expo
 ```
 openssl pkcs12 -in site.pfx -out site.crt -nodes
 ```
+
+
+## Ссылки
+
+Основы работы с openssl
+http://citforum.ru/security/cryptography/openssl/
