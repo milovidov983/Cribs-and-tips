@@ -17,7 +17,7 @@ openssl crl2pkcs7 -nocrl -certfile site.crt -out site.p7b -certfile site.ca-bund
 ```
 openssl pkcs12 -export -out site.pfx -inkey site.key -in site.crt -certfile site.ca-bundle
 ```
-После выполнения команды, будет запрошена установка пароля ключа.
+(после выполнения команды, будет запрошена установка пароля ключа.)
 
 **DER в PEM**
 ```
