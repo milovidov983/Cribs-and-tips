@@ -44,3 +44,5 @@ openssl pkcs12 -in site.pfx -out site.crt -nodes
 
 Основы работы с openssl
 http://citforum.ru/security/cryptography/openssl/
+
+https://www.emaro-ssl.ru/support/csr-chto-eto.php
