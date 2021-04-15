@@ -39,6 +39,25 @@ openssl pkcs7 -print_certs -in site.p7b -out certificate.ceropenssl pkcs12 -expo
 openssl pkcs12 -in site.pfx -out site.crt -nodes
 ```
 
+## PFX в KEY и CRT
+
+Воспользуемся всем знакомой утилитой openssl, чтобы вытащить открытую часть pfx-сертификата
+
+```
+openssl pkcs12 -in certificate.pfx -clcerts -nokeys -out certificate.crt
+```
+
+Нужно будет ввести пароль, который вы указывали при экспорте .pfx-сертификата. Теперь попробуем извлечь **закрытую часть** сертификата, поместив её в отдельный запароленный файл
+
+```
+openssl pkcs12 -in certificate.pfx -nocerts -out key-encrypted.key
+```
+
+Закрытый ключ сертификата с парольной защитой не всегда удобно использовать на реальном окружении. Например тот же Apache будет спрашивать пароль при каждом рестарте сервиса, что будет требовать человеческого участия. Обойти проблему можно, сняв пароль с закрытого ключа
+
+```
+openssl rsa -in key-encrypted.key -out key-decrypted.key
+```
 
 ## Ссылки
 
