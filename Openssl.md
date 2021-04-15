@@ -59,9 +59,18 @@ openssl pkcs12 -in certificate.pfx -nocerts -out key-encrypted.key
 openssl rsa -in key-encrypted.key -out key-decrypted.key
 ```
 
+## Создание сертификата с использованием gost2012
+
+```
+openssl req -x509 -newkey gost2012_256 -pkeyopt paramset:A -nodes -keyout key.pem -out cert.pem
+```
+
 ## Ссылки
 
 Основы работы с openssl
 http://citforum.ru/security/cryptography/openssl/
 
 https://www.emaro-ssl.ru/support/csr-chto-eto.php
+
+Как добавить поддержку шифрования по ГОСТ Р 34.10-2012 в OpenSSL 1.1.1d на Debian 9 Stretch
+https://jakondo.ru/kak-dobavit-podderzhku-shifrovaniya-po-gost-r-34-10-2012-v-openssl-1-1-1d-na-debian-9-stretch/
