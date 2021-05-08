@@ -101,3 +101,8 @@ sudo nano -Bu ~/.bashrc
 
 alias nano='nano -Bu'  # backup original file and undo changes
 alias rm='rm -i' # request confirmation before deleting a file
+
+## Про make install
+
+Суть сводится к тому, что эту команду в виде «make install» или «sudo make install» использовать в современных дистрибутивах нельзя.
+https://habr.com/ru/post/130868/
