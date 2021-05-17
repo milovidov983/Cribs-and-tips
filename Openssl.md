@@ -65,6 +65,14 @@ openssl rsa -in key-encrypted.key -out key-decrypted.key
 openssl req -x509 -newkey gost2012_256 -pkeyopt paramset:A -nodes -keyout key.pem -out cert.pem
 ```
 
+## Convert RSA Key File to PEM Format
+
+Convert RSA Key File to PEM Format
+Use the following command to convert an RSA key file to a .pem format file:
+Syntax: openssl rsa -in <path-to-key-file> -text <path-to-PEM-file>
+Example: openssl rsa -in C:\Certificates\serverKeyFile.key -text > serverKeyFileInPemFormat.pem
+
+
 ## Ссылки
 
 Основы работы с openssl
