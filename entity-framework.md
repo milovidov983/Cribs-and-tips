@@ -13,7 +13,7 @@ Unable to create an object of type 'Context'. For the different patterns support
 ```
 Решением будет создание фабрики для контекста вашей базы данных:
 
-```
+```csharp
 public class ContextFactory : IDesignTimeDbContextFactory<Context> {
     public Context CreateDbContext(string[] args) {
         var optionsBuilder = new DbContextOptionsBuilder<Context>();
@@ -27,7 +27,7 @@ public class ContextFactory : IDesignTimeDbContextFactory<Context> {
 Из кода фабрики видно, что метод `CreateDbContext(string[] args)` предполагает наличие конструктора у вашего контекста базы данных, 
 поэтому его необходиму будет создать самостоятельно:
 
-```
+```csharp
 public class Context : DbContext {
     public DbSet<User> Users { get; set; }
 
