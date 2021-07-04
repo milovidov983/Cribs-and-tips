@@ -11,7 +11,7 @@
 ```
 Unable to create an object of type 'Context'. For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728
 ```
-Решением будет создание фабрики вида:
+Решением будет создание фабрики для контекста вашей базы данных:
 
 ```
 public class ContextFactory : IDesignTimeDbContextFactory<Context> {
