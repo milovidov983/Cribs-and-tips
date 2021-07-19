@@ -3,3 +3,9 @@
 ```powershell
 Get-ChildItem -Path "." -Include "node_modules" -Recurse -Directory | Remove-Item -Recurse -Force
 ```
+
+## How to enable executing powershell script
+
+```powershell
+Set-ExecutionPolicy Unrestricted
+```
