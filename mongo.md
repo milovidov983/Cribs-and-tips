@@ -44,3 +44,21 @@ Now you can authenticate with the connection string:
 ```
 mongodb://myuser:secret@localhost:27017/mydatabase
 ```
+
+
+## Aggrigation
+```
+[
+    {
+        "$match": { 
+					"PlayerId": {{appsmith.URL.queryParams.playerId}}
+				}
+    },
+    {
+        "$group": {
+            _id: "$PlayerId",
+            totalAmount: { $sum: "$Amount"}
+        }
+    }
+]
+```
