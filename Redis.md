@@ -16,3 +16,5 @@ GRAPH.QUERY TomLovesJudy "CREATE (tom:Person {name: 'Tom'})-[:loves]->(judy:Pers
 
 GRAPH.QUERY TomLovesJudy "MATCH (x) RETURN x"
 ```
+
+https://habr.com/ru/articles/482418/
