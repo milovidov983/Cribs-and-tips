@@ -9,3 +9,9 @@ Get-ChildItem -Path "." -Include "node_modules" -Recurse -Directory | Remove-Ite
 ```powershell
 Set-ExecutionPolicy Unrestricted
 ```
+
+## Show all enviroment variables
+
+```powershell
+gci env:* | sort-object name
+```
