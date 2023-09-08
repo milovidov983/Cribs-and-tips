@@ -1,6 +1,9 @@
 # Golang
 
+## Target systems
 
+```$Env:GOOS = "windows"; $Env:GOARCH = "amd64"```
+```$Env:GOOS = "linux"; $Env:GOARCH = "amd64"```
 ## Maps
 
 ### Create
