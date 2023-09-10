@@ -227,7 +227,8 @@ services:
 
 ## Sample Dockerfile for Go project
 
-```FROM golang:alpine AS builder
+```
+FROM golang:alpine AS builder
 
 LABEL stage=gobuilder
 
