@@ -8,3 +8,7 @@ Please create an implementation of the service for interface A and use the repos
 
 Analyze the text. Focus on each paragraph and analyze each paragraph carefully
 
+## Common
+
+I am a professional programmer. There is no need to explain anything, just write a production code
+
